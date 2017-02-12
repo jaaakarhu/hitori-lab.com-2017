@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hitoriLab</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/dracula.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  </head>
+  <body class="gallery">
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="l-header">
+      <h2 class="logo"><a href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="3063 129 147 49"><defs><style>.a{font-family:NotoSans-Bold, Noto Sans;font-weight:700;letter-spacing:-0.061em;}.b{letter-spacing:-0.081em;}</style></defs><text class="a" transform="translate(3063 167)"><tspan x="0" y="0">hitor</tspan><tspan class="b" y="0">i</tspan><tspan y="0">Lab</tspan></text></svg>
+      </a></h2>
+      <nav class="headerNav">
+        <ul class="headerNav-list">
+          <li class="headerNav-item"><a href="about.html">ABOUT</a></li>
+          <li class="headerNav-item"><a href="single-gallery.html">GALLERY</a></li>
+          <li class="headerNav-item"><a href="single-blog.html">BLOG</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="l-main">
+      <div id="canvas-wrapper" class="canvas-wrapper">
+        <canvas id="fullcanvas" data-processing-sources="processing/20170126.pde"></canvas>
+      </div>
+      <div class="gallery-container">
+        <article class="article">
+          <h1>日本語Processing</h1>
+          <p>ピクミンとかそんなやつらの動きを再現しました。</p>
+          <div id="code-btn" class="code-btn">SHOW CODE</div>
+          <div class="gallery-paginationLink">
+            <div class="gallery-previousLink"><a href="#">< PREVIOUS</a></div>
+            <div class="gallery-nextLink"><a href="#">NEXT ></a></div>
+          </div>
+        </article>
+      </div>
+      <div class="source-container">
+        <pre class="ajax"></pre>
+      </div>
+    </main>
+    <footer class="l-footer">
+      <div class="copyright">hitori Lab ©2017</div>
+    </footer>
+
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/Processing.js/processing.js"></script>
+
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <script>
+      $(function(){
+        var codeBtn = $('.code-btn');
+        codeBtn.on('click', function(){
+          if(codeBtn.hasClass('active')){
+            $(this).text('SHOW CODE');
+            $(this).removeClass('active');
+            $('.source-container').removeClass('active');
+          } else {
+            $(this).text('HIDE CODE');
+            $(this).addClass('active');
+            $('.source-container').addClass('active');
+          }
+        });
+
+      });
+      $(function(){
+        $.ajax({
+          url: './processing/20170126.pde',
+          success : function(data){
+            $('pre.ajax').text(data);
+            $('pre.ajax').each(function(i, block) {
+              hljs.highlightBlock(block);
+            });
+          }
+        });
+      });
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

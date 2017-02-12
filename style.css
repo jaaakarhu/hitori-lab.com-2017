@@ -8,6 +8,477 @@
   License URI:
   Text Domain:
 */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Thin.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 200;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: local("NotoSansJP-Regular.otf"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format("opentype"); }
+
 body {
+  font-family: 'Noto Sans Japanese', sans-serif;
   color: #333;
-  background-color: #fff; }
+  margin: 0; }
+
+body.loaded .element {
+  opacity: 1; }
+
+body.loaded .gallery-item {
+  margin-top: 0; }
+
+body.loaded .blog-item {
+  margin-left: 32px; }
+
+body.loaded .archive-item {
+  margin-top: 0; }
+
+.container {
+  padding: 30px 40px; }
+
+.element {
+  opacity: 0;
+  padding: 16px 16px;
+  -webkit-transition: opacity .5s ease-in 1s, margin .5s ease-in 1s;
+  transition: opacity .5s ease-in 1s, margin .5s ease-in 1s; }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px 20px; }
+  .element {
+    opacity: 0;
+    padding: 5px 2.5px;
+    -webkit-transition: opacity .5s ease-in 1s, margin .5s ease-in 1s;
+    transition: opacity .5s ease-in 1s, margin .5s ease-in 1s; } }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+.l-header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 56px;
+  padding-right: calc(240px + 32px / 2);
+  background: #fff;
+  z-index: 100; }
+
+.headerNav ul.headerNav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  padding: 0; }
+  .headerNav ul.headerNav-list li.menu-item {
+    font-size: 14px;
+    padding: 0 16px;
+    letter-spacing: 2px; }
+    .headerNav ul.headerNav-list li.menu-item a {
+      color: #222; }
+
+.logo {
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 40px;
+  font-size: 0; }
+  .logo svg {
+    width: 120px;
+    height: auto; }
+    .logo svg .a {
+      fill: #222;
+      color: #222;
+      font-size: 36px; }
+
+.l-main {
+  padding-top: 56px; }
+
+.l-footer {
+  padding: 16px 0; }
+
+.copyright {
+  color: #aaa;
+  text-align: center; }
+
+.home .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  padding-right: calc(32px / 2); }
+
+.home .category-title {
+  height: 56px;
+  margin: 0;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 8px; }
+
+.home .l-gallery {
+  margin-top: calc(0px - (32px / 2));
+  margin-left: calc((100vw - 240px) / 2);
+  margin-right: 240px; }
+
+.home .hero {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: calc((100vw - 240px) / 2);
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding-top: 0; }
+  .home .hero .hero-bg {
+    position: relative;
+    display: block;
+    height: 100%;
+    max-height: 100%; }
+
+.home .hero-title {
+  position: absolute;
+  bottom: 32px;
+  right: 0;
+  margin: 16px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff; }
+
+.home .gallery-item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: 0;
+  margin-top: 36px; }
+  .home .gallery-item img {
+    width: 100%;
+    max-width: 100%; }
+
+.home .tag-title {
+  font-size: 12px;
+  margin: 4px 0; }
+  .home .tag-title a {
+    color: #222; }
+
+.home .gallery-title {
+  margin: 4px 0;
+  font-size: 15px; }
+
+.home .l-blog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+  z-index: 101; }
+
+.home .blog-container {
+  width: 256px;
+  height: 100vh;
+  border-left: 1px solid #d0d0d0;
+  overflow-y: scroll; }
+
+.home .blog-info {
+  font-size: 12px; }
+  .home .blog-info .blog-tag {
+    padding-right: 12px; }
+
+.home .blog-title {
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 1.4; }
+
+.home .blog-item {
+  margin: 0 32px;
+  margin-left: 64px;
+  padding: 32px 0;
+  border-bottom: 1px solid #d0d0d0; }
+  .home .blog-item a {
+    color: #222; }
+
+.single-post article h1 {
+  margin: 16px 0;
+  font-size: 30px; }
+
+.single-post article h2 {
+  font-size: 26px;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #222; }
+
+.single-post article h3 {
+  font-size: 22px;
+  margin-top: 48px;
+  margin-bottom: 12px; }
+
+.single-post article p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.6; }
+
+.single-post .blog-container {
+  max-width: 800px;
+  margin: 0 auto; }
+
+.single-post .blog-paginationLink {
+  display: block;
+  position: fixed;
+  top: 240px;
+  height: 0;
+  z-index: 1;
+  font-size: 12px;
+  letter-spacing: 1px; }
+  .single-post .blog-paginationLink a {
+    color: #222; }
+
+.single-post .blog-previousLink {
+  left: 0;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.single-post .blog-nextLink {
+  right: 0;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.single-post .article {
+  padding: 2rem; }
+
+.single-post .wp-post-image {
+  width: 100%;
+  max-width: 100%; }
+
+.single-post .blog-info {
+  font-size: 20px;
+  margin: 16px 0; }
+  .single-post .blog-info .blog-tag {
+    padding-right: 16px; }
+  .single-post .blog-info .blog-date {
+    color: #95989A; }
+
+.single-post .blog-img {
+  width: 100%;
+  max-width: 100%; }
+
+.single-post .related-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center; }
+  .single-post .related-heading:before, .single-post .related-heading:after {
+    border-top: 1px solid;
+    content: '';
+    display: inline;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .single-post .related-heading:before {
+    margin-right: 1em; }
+  .single-post .related-heading:after {
+    margin-left: 1em; }
+
+.single-post .related-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.single-post .related-item {
+  width: 50%;
+  text-align: center; }
+  .single-post .related-item a {
+    color: #222; }
+  .single-post .related-item .related-info .related-tag {
+    padding-right: 16px; }
+  .single-post .related-item .related-info .related-date {
+    color: #95989A; }
+
+.single-gallery article h1 {
+  margin: 8px 0;
+  font-size: 20px;
+  font-weight: normal; }
+
+.single-gallery article p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6; }
+
+.single-gallery .canvas-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed; }
+
+.single-gallery .l-header {
+  background: rgba(0, 0, 0, 0.2); }
+  .single-gallery .l-header .headerNav .headerNav-list .headerNav-item a {
+    color: #fff; }
+
+.single-gallery .logo svg .a {
+  fill: #fff;
+  color: #fff; }
+
+.single-gallery .l-main {
+  padding-top: 0; }
+
+.single-gallery .gallery-container {
+  position: fixed;
+  bottom: 0;
+  margin: 16px;
+  z-index: 999; }
+
+.single-gallery .article {
+  max-width: 400px;
+  padding: 16px 32px;
+  color: #fff;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5); }
+
+.single-gallery .gallery-paginationLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 8px 0; }
+  .single-gallery .gallery-paginationLink a {
+    font-size: 12px;
+    color: #fff; }
+
+.single-gallery .code-btn {
+  width: 110px;
+  display: block;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer; }
+
+.single-gallery .source-container {
+  opacity: 0;
+  max-width: 600px;
+  position: fixed;
+  top: 64px;
+  right: 32px;
+  height: calc(100% - 128px);
+  overflow-y: scroll;
+  z-index: 100;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out; }
+  .single-gallery .source-container.active {
+    opacity: 1;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out; }
+
+.single-gallery .hljs {
+  margin: 0;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.5); }
+  .single-gallery .hljs:hover {
+    background: rgba(39, 40, 34, 0.8); }
+
+.archive .archive-heading {
+  margin: 32px auto;
+  font-size: 36px;
+  font-style: italic;
+  letter-spacing: 4px;
+  text-align: center; }
+
+.archive .archive-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch; }
+
+.archive .archive-item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: 0;
+  margin-top: 64px; }
+  .archive .archive-item img {
+    width: 100%;
+    max-width: 100%; }
+  .archive .archive-item:nth-child(2n) {
+    padding-top: 64px; }
+
+.archive .tag-title {
+  font-size: 12px;
+  margin: 4px 0; }
+  .archive .tag-title a {
+    color: #222; }
+
+.archive .archive-title {
+  margin: 4px 0;
+  font-size: 15px; }

@@ -1,0 +1,38 @@
+.archive {
+  .archive-heading {
+    margin: 32px auto;
+    font-size: 36px;
+    font-style: italic;
+    letter-spacing: 4px;
+    text-align: center;
+
+  }
+  .archive-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+  }
+  .archive-item {
+    flex-grow: 1;
+    min-width: 0;
+    margin-top: 64px;
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+    &:nth-child(2n){
+      padding-top: 64px;
+    }
+  }
+  .tag-title {
+    font-size: 12px;
+    margin: 4px 0;
+    a {
+      color: #222;
+    }
+  }
+  .archive-title {
+    margin: 4px 0;
+    font-size: 15px;
+  }
+}

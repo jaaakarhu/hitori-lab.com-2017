@@ -108,9 +108,9 @@ add_action( 'widgets_init', 'hitorilab_widgets_init' );
 function hitorilab_scripts() {
 	wp_enqueue_style( 'hitorilab-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'hitorilab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', "", "20160608", false );
 
-	wp_enqueue_script( 'gulp-wordpress-javascript', get_template_directory_uri() . '/js/app.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'gulp-wordpress-javascript', get_template_directory_uri() . '/js/app.min.js', array(), '201702', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -142,3 +142,16 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Add upload file type
+
+function custom_mime_types($file_types){
+	$new_filetypes = array();
+	$new_filetypes['pde'] = 'application/x-processing';
+	$file_types = array_merge($file_types, $new_filetypes );
+
+	return $file_types;
+}
+add_filter('upload_mimes', 'custom_mime_types');
+*/

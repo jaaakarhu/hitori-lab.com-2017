@@ -1,0 +1,121 @@
+.single-post {
+  article {
+    h1 {
+      margin: 16px 0;
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 26px;
+      margin-top: 64px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #222;
+    }
+    h3 {
+      font-size: 22px;
+      margin-top: 48px;
+      margin-bottom: 12px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+  .blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .blog-paginationLink {
+    display: block;
+    position: fixed;
+    top: 240px;
+    height: 0;
+    z-index: 1;
+    font-size: 12px;
+    letter-spacing: 1px;
+    a {
+      color: #222;
+    }
+  }
+  .blog-previousLink {
+    left: 0;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  .blog-nextLink {
+    right: 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .article {
+    padding: 2rem;
+  }
+  .wp-post-image {
+    width: 100%;
+    max-width: 100%;
+  }
+  .blog-info {
+    font-size: 20px;
+    margin: 16px 0;
+    .blog-tag {
+      padding-right: 16px;
+    }
+    .blog-date {
+      color: #95989A;
+    }
+  }
+  .blog-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .related-heading {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    &:before,
+    &:after {
+      border-top: 1px solid;
+      content: '';
+      display: inline;
+      flex-grow: 1;
+    }
+    &:before {
+      margin-right: 1em;
+    }
+    &:after {
+      margin-left: 1em;
+    }
+  }
+
+  .related-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .related-item {
+    width: 50%;
+    text-align: center;
+    a {
+      color: #222;
+    }
+    .related-info {
+      .related-tag {
+        padding-right: 16px;
+      }
+      .related-date {
+        color: #95989A;
+      }
+    }
+    .related-title {
+
+    }
+  }
+
+}

@@ -8,7 +8,7 @@ var gutil = require('gulp-util');
 var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
-
+var rename = require('gulp-rename');
 var onError = function (err) {
   console.log('An error occurred:', gutil.colors.magenta(err.message));
   gutil.beep();
